@@ -1,14 +1,10 @@
-# 
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
- 
-
 require 'rubygems'
 require 'rake'
 require 'rake/clean'
 require 'rake/gempackagetask'
 require 'rake/rdoctask'
 require 'rake/testtask'
+require 'rcov/rcovtask'
 
 spec = Gem::Specification.new do |s|
   s.name = 'NifValidator'
@@ -43,3 +39,10 @@ end
 Rake::TestTask.new do |t|
   t.test_files = FileList['test/**/*.rb']
 end
+
+Rcov::RcovTask.new do |t|
+  t.test_files = FileList['test/*test*.rb']
+  t.verbose = true     # uncomment to see the executed command
+  t.rcov_opts << '--exclude /gems/,/Library/,/usr/,spec,lib/tasks'
+end
+
