@@ -1,5 +1,5 @@
 require 'test/unit'
-require 'nif_generator'
+require 'lib/nif_generator'
 
 class NifGeneratorTest < Test::Unit::TestCase
   def test_should_validate_correct_nif

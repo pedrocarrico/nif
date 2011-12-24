@@ -1,3 +1,5 @@
 coverage
 nbproject
 pkg
+.idea
+doc/*

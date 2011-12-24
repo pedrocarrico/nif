@@ -7,11 +7,11 @@ require 'rake/testtask'
 require 'rcov/rcovtask'
 
 spec = Gem::Specification.new do |s|
-  s.name = 'NifValidator'
+  s.name = 'NifGenerator'
   s.version = '0.0.1'
   s.has_rdoc = true
   s.extra_rdoc_files = ['README', 'LICENSE']
-  s.summary = 'Your summary here'
+  s.summary = 'Portuguese NIF generator and validator'
   s.description = s.summary
   s.author = ''
   s.email = ''
@@ -31,7 +31,7 @@ Rake::RDocTask.new do |rdoc|
   files =['README', 'LICENSE', 'lib/**/*.rb']
   rdoc.rdoc_files.add(files)
   rdoc.main = "README" # page to start on
-  rdoc.title = "NifValidator Docs"
+  rdoc.title = "NifGenerator Docs"
   rdoc.rdoc_dir = 'doc/rdoc' # rdoc output folder
   rdoc.options << '--line-numbers'
 end
