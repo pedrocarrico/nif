@@ -5,6 +5,9 @@ require 'rake/gempackagetask'
 require 'rake/rdoctask'
 require 'rake/testtask'
 require 'rcov/rcovtask'
+require 'cucumber'
+require 'cucumber/rake/task'
+require 'rspec/core/rake_task'
 
 spec = Gem::Specification.new do |s|
   s.name = 'NifGenerator'
@@ -46,3 +49,11 @@ Rcov::RcovTask.new do |t|
   t.rcov_opts << '--exclude /gems/,/Library/,/usr/,spec,lib/tasks'
 end
 
+RSpec::Core::RakeTask.new do |t|
+  t.pattern = "./spec/**/*_spec.rb" # don't need this, it's default.
+  # Put spec opts in a file named .rspec in root
+end
+
+Cucumber::Rake::Task.new(:features) do |t|
+  t.cucumber_opts = "features --format pretty"
+end
