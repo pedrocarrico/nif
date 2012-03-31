@@ -4,4 +4,4 @@ pkg
 .idea
 doc/*
 .rvmrc
-.rbenv
+.rbenv-version
