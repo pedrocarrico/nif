@@ -32,8 +32,10 @@ Have fun!
 	rake test
 	# rspec
 	rake spec
-	#cucumber features
+	# cucumber features
 	rake cucumber
+	# check coverage
+	rake rcov # open coverage/index.html for the results
 
 ### TODO
 Make a CustomValidator for rails.
