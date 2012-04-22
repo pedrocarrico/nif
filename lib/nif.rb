@@ -5,21 +5,21 @@ module Nif
 
       (1..7).to_a.each { generated_nif += (rand(10)).to_s }
 
-      generated_nif += NifGenerator.calculate_check_digit(generated_nif).to_s
+      generated_nif += Nif.calculate_check_digit(generated_nif).to_s
     end
 
     def self.generate_unique
-      if NifGenerator.instance.nifs_generated.nil?
-        NifGenerator.instance.nifs_generated = []
+      if Nif.instance.nifs_generated.nil?
+        Nif.instance.nifs_generated = []
       end
 
       generated_nif = generate
 
-      while NifGenerator.instance.nifs_generated.include? generated_nif
+      while Nif.instance.nifs_generated.include? generated_nif
         generated_nif = generate
       end
 
-      NifGenerator.instance.nifs_generated << generated_nif
+      Nif.instance.nifs_generated << generated_nif
 
       generated_nif
     end
@@ -27,13 +27,13 @@ module Nif
 
   class Validator
     def self.validate value
-      return false unless NifGenerator.is_integer? value
+      return false unless Nif.is_integer? value
       return false if value.length != 9
-      NifGenerator.calculate_check_digit(value)  == value[8,1].to_i
+      Nif.calculate_check_digit(value)  == value[8,1].to_i
     end
   end
 
-  class NifGenerator
+  class Nif
     @@instance = new
     private_class_method :new
 
