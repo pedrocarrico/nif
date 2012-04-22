@@ -1,7 +1,7 @@
 require 'test/unit'
-require 'lib/nif_generator'
+require 'lib/nif'
 
-class NifGeneratorTest < Test::Unit::TestCase
+class NifTest < Test::Unit::TestCase
   def test_should_validate_correct_nif
     valid_nif = '502874210'
     assert_equal true, Nif::Validator.validate(valid_nif), "Nif #{valid_nif} should be valid"

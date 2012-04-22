@@ -1,4 +1,4 @@
-require 'lib/nif_generator'
+require 'lib/nif'
 
 Given /^a NifGenerator$/ do
   #TODO: get a valid instance?
