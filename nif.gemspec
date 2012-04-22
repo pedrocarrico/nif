@@ -1,6 +1,9 @@
+$:.push File.expand_path('../lib', __FILE__)
+require 'nif_generator/version'
+
 Gem::Specification.new do |s|
   s.name        = 'nif_generator'
-  s.version     = '0.0.1'
+  s.version     = Nif::VERSION
   s.date        = '2012-04-22'
   s.summary     = "NifGenerator - Portuguese NIF generator and validator"
   s.description = "This is a simple project that covers the generation and validation of the Portuguese Fiscal Code (or NIF)."
