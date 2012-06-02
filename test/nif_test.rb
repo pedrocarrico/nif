@@ -1,5 +1,5 @@
 require 'test/unit'
-require 'lib/nif'
+require 'nif'
 
 class NifTest < Test::Unit::TestCase
   def test_should_validate_correct_nif

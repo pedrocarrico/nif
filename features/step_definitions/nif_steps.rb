@@ -1,4 +1,4 @@
-require 'lib/nif'
+require File.expand_path(File.dirname(__FILE__) + '/../../lib/nif')
 
 Given /^a NifGenerator$/ do
   #TODO: get a valid instance?

@@ -1,4 +1,4 @@
-require 'lib/nif'
+require 'nif'
 
 describe "NifGenerator" do
   it "should validate a valid nif" do
