@@ -6,6 +6,8 @@ require 'cucumber'
 require 'cucumber/rake/task'
 require 'rspec/core/rake_task'
 
+task :default => [:test, :spec, :features]
+
 Rake::TestTask.new do |t|
   t.test_files = FileList['test/**/*.rb']
 end
@@ -24,3 +26,4 @@ end
 Cucumber::Rake::Task.new(:features) do |t|
   t.cucumber_opts = "features --format pretty"
 end
+
