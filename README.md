@@ -20,10 +20,9 @@ Just:
 	=> true
 
 ### Description
-
-This is a simple project used to learn and teach the basics of ruby syntax, unit testing and code coverage.
-It covers the generation and validation of the Portuguese Fiscal Code (or NIF).
-If you want to contribute be sure to make a test covering your changes.
+This gem covers the generation and validation of the Portuguese Fiscal Code (or NIF).
+I encourage you to contribute but be sure to include a test covering your changes in your pull request.
+I've tested it on ruby 1.8.7-p358, 1.9.3-p125 and rails 3.2.3.
 
 Have fun!
 
@@ -37,5 +36,26 @@ Have fun!
 	# check coverage
 	rake rcov # open coverage/index.html for the results
 
+### Rails Custom Validator
+To have this included as a rails custom validator you have to include it on your model like this:
+
+	class Person < ActiveRecord::Base
+	  include Nif
+	
+	  validates :nif, :nif=> true
+	end
+	
+
+nif comes with it's own I18n file but you can also define the :invalid key in your locale to have a custom message in your models like this:
+
+	en:
+	  activerecord:
+	    errors:
+	      models:
+	        person:
+	          attributes:
+	            nif:
+	              invalid: 'is not valid!'
+
 ### TODO
-Make a CustomValidator for rails.
+Have javascript validations available.
