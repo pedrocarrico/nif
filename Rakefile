@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'rake'
 require 'rake/testtask'
-require 'rcov/rcovtask'
 require 'cucumber'
 require 'cucumber/rake/task'
 require 'rspec/core/rake_task'
@@ -12,10 +11,10 @@ Rake::TestTask.new do |t|
   t.test_files = FileList['test/**/*.rb']
 end
 
-Rcov::RcovTask.new do |t|
-  t.test_files = FileList['test/*test*.rb']
-  t.verbose = true     # uncomment to see the executed command
-  t.rcov_opts << '--exclude /gems/,/Library/,/usr/,spec,lib/tasks'
+task :coverage do
+  ENV['COVERAGE'] = 'on'
+  FileUtils.rm_r 'coverage', :force => true
+  Rake::Task["spec"].invoke
 end
 
 RSpec::Core::RakeTask.new do |t|

@@ -1,7 +1,8 @@
 source :rubygems
 
 gem 'rake'
-gem 'rcov'
+gem "simplecov", :require => false
+gem "simplecov-rcov"
 gem 'test-unit'
 gem 'rspec'
 gem 'cucumber'

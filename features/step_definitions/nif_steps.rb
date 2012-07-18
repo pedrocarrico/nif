@@ -1,3 +1,4 @@
+require File.expand_path(File.dirname(__FILE__) + '/../../spec/coverage_helper') if ENV['COVERAGE'] == 'on'
 require File.expand_path(File.dirname(__FILE__) + '/../../lib/nif')
 
 Given /^a NifGenerator$/ do
